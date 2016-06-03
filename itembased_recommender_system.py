@@ -273,24 +273,6 @@ def recommendOne(prefs,prefsTr,itemMatch,item,user):
         return 200
     return (averageRat+up/down)
 
-def recommendOneUser(prefs,prefsTr,itemMatch,item,user):
-    if (item in prefs[user]):
-        return 200
-    if (user not in itemMatch):
-        return 200
-    if (item not in prefsTr):
-        return 200
-    itemRatings = prefs[user]
-    userRatings = prefsTr[item]
-    s = 0
-    averageRat = sum(rating for (user,rating) in itemRatings.items())/len(itemRatings)
-    
-    up = sum((userRatings[user2] - averageRat)*itemMatch[user][user2] for user2 in  userRatings if (user2 in itemMatch[user]))
-    down = sum(abs(itemMatch[user][user2]) for user2 in  userRatings if (user2 in itemMatch[user]))
-    if (down == 0):
-        return 200
-    return (averageRat+up/down)
-
 def recommendOne_two(prefs,prefsTr,itemMatch,item,user):
     if (item in prefs[user]):
         return 0
