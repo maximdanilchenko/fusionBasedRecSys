@@ -1,5 +1,7 @@
 # fusionBasedRecSys
 
+!!Work is not ended yet
+
 metrics.py - file with metrics realisation
 
 itembased_recommender_system.py - file with all recsys methods (not only itembased)
